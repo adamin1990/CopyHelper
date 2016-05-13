@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.CompoundButton;
 
 import com.adamin.copyhelper.android.utils.AccessibillityManagerC;
+import com.github.javiersantos.appupdater.AppUpdater;
+import com.github.javiersantos.appupdater.enums.UpdateFrom;
 import com.umeng.analytics.MobclickAgent;
 
 import java.net.URI;
@@ -96,6 +98,16 @@ private AppCompatButton btn_qq,btn_weibo;
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
             }
         });
+
+        new AppUpdater(this)
+                .setUpdateFrom(UpdateFrom.GITHUB)
+                .setGitHubUserAndRepo("adamin1990", "CopyHelper")
+                .setIcon(R.mipmap.ic_launcher)
+                .setDialogTitleWhenUpdateAvailable("版本更新了~")
+                .setDialogButtonDoNotShowAgain("")
+                .setDialogDescriptionWhenUpdateAvailable("复制助手又更新啦！\n赶紧下载最新版本的App吧~")
+                .setDialogButtonUpdate("立即更新")
+                .start();
         }
 
     @Override
