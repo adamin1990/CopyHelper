@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">复制助手</string>
+    <string name="service_desc">点击开启文本复制权限 \n开启后您可以复制那些手机上您原本无法复制的信息咯~\n问题反馈请加qq:14846869</string>
+</resources>
